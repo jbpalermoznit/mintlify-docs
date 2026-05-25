@@ -1,122 +1,73 @@
 {
   "$schema": "https://mintlify.com/docs.json",
   "theme": "mint",
-  "name": "Mint Starter Kit",
-  "colors": {
-    "primary": "#16A34A",
-    "light": "#07C983",
-    "dark": "#15803D"
+  "name": "ZNIT Simulador de Carbono",
+  "logo": {
+    "light": "/logo.png",
+    "dark": "/logo.png"
   },
-  "favicon": "/favicon.svg",
+  "favicon": "/favicon.png",
+  "colors": {
+    "primary": "#56B7A5",
+    "light": "#A9D7CD",
+    "dark": "#1d7a6b"
+  },
   "navigation": {
     "tabs": [
       {
-        "tab": "Guides",
+        "tab": "Documentação",
         "groups": [
           {
-            "group": "Getting started",
+            "group": "Começando",
             "pages": [
-              "index",
-              "quickstart",
-              "development"
+              "introducao/bem-vindo",
+              "introducao/primeiros-passos"
             ]
           },
           {
-            "group": "Customization",
+            "group": "Fluxo principal",
             "pages": [
-              "essentials/settings",
-              "essentials/navigation"
+              "fluxo/importar-curva-abc",
+              "fluxo/entendendo-itens",
+              "fluxo/editar-fator",
+              "fluxo/cenarios"
             ]
           },
           {
-            "group": "Writing content",
+            "group": "Análise",
             "pages": [
-              "essentials/markdown",
-              "essentials/code",
-              "essentials/images",
-              "essentials/reusable-snippets"
+              "analise/visao-geral"
             ]
           },
           {
-            "group": "AI tools",
+            "group": "Referência",
             "pages": [
-              "ai-tools/cursor",
-              "ai-tools/claude-code",
-              "ai-tools/windsurf"
-            ]
-          }
-        ]
-      },
-      {
-        "tab": "API reference",
-        "groups": [
-          {
-            "group": "API documentation",
-            "pages": [
-              "api-reference/introduction"
-            ]
-          },
-          {
-            "group": "Endpoint examples",
-            "pages": [
-              "api-reference/endpoint/get",
-              "api-reference/endpoint/create",
-              "api-reference/endpoint/delete",
-              "api-reference/endpoint/webhook"
+              "referencia/glossario"
             ]
           }
         ]
       }
-    ],
-    "global": {
-      "anchors": [
-        {
-          "anchor": "Documentation",
-          "href": "https://mintlify.com/docs",
-          "icon": "book-open-cover"
-        },
-        {
-          "anchor": "Blog",
-          "href": "https://mintlify.com/blog",
-          "icon": "newspaper"
-        }
-      ]
-    }
-  },
-  "logo": {
-    "light": "/logo/light.svg",
-    "dark": "/logo/dark.svg"
+    ]
   },
   "navbar": {
     "links": [
       {
-        "label": "Support",
-        "href": "mailto:hi@mintlify.com"
+        "label": "Suporte",
+        "href": "mailto:contato@znit.ai"
       }
     ],
     "primary": {
       "type": "button",
-      "label": "Dashboard",
-      "href": "https://dashboard.mintlify.com"
+      "label": "Acessar o app",
+      "href": "https://simulador.znit.ai"
     }
-  },
-  "contextual": {
-    "options": [
-     "copy",
-     "view",
-     "chatgpt",
-     "claude",
-     "perplexity",
-     "mcp",
-     "cursor",
-     "vscode"
-   ]
   },
   "footer": {
     "socials": {
-      "x": "https://x.com/mintlify",
-      "github": "https://github.com/mintlify",
-      "linkedin": "https://linkedin.com/company/mintlify"
+      "website": "https://znit.ai"
     }
+  },
+  "search": {
+    "prompt": "Buscar nos documentos…"
   }
 }

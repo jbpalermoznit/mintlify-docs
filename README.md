@@ -1,55 +1,61 @@
-# Mintlify Starter Kit
+# ZNIT Simulador de Carbono — Documentação de Usuário
 
-Use the starter kit to get your docs deployed and ready to customize.
+Documentação técnica do simulador, publicada via [Mintlify](https://mintlify.com).
 
-Click the green **Use this template** button at the top of this repo to copy the Mintlify starter kit. The starter kit contains examples with
+App de produção: <https://simulador.znit.ai>
 
-- Guide pages
-- Navigation
-- Customizations
-- API reference pages
-- Use of popular components
+## Estrutura
 
-**[Follow the full quickstart guide](https://starter.mintlify.com/quickstart)**
+```
+.
+├── docs.json              # config (cores, nav, branding)
+├── logo.png               # logo no topbar
+├── favicon.png            # favicon
+├── introducao/
+│   ├── bem-vindo.mdx
+│   └── primeiros-passos.mdx
+├── fluxo/
+│   ├── importar-curva-abc.mdx
+│   ├── entendendo-itens.mdx
+│   ├── editar-fator.mdx
+│   └── cenarios.mdx
+├── analise/
+│   └── visao-geral.mdx
+└── referencia/
+    └── glossario.mdx
+```
 
-## AI-assisted writing
-
-Set up your AI coding tool to work with Mintlify:
+## Desenvolvimento local
 
 ```bash
-npx skills add https://mintlify.com/docs
+npm install -g mintlify
+mintlify dev
+# abre em http://localhost:3000
 ```
 
-This command installs Mintlify's documentation skill for your configured AI tools like Claude Code, Cursor, Windsurf, and others. The skill includes component reference, writing standards, and workflow guidance.
+Hot-reload automático nos `.mdx`.
 
-See the [AI tools guides](/ai-tools) for tool-specific setup.
+## Deploy
 
-## Development
+O Mintlify reconstrói a cada push neste repositório. Para a configuração inicial:
 
-Install the [Mintlify CLI](https://www.npmjs.com/package/mint) to preview your documentation changes locally. To install, use the following command:
+1. Acesse <https://dashboard.mintlify.com>
+2. **Add deployment** → conecte este repositório
+3. Defina **Production Branch**: `main`
+4. (Opcional) Custom domain `docs.simulador.znit.ai` em **Settings → Domain**
 
-```
-npm i -g mint
-```
+## Convenções
 
-Run the following command at the root of your documentation, where your `docs.json` is located:
+- **PT-BR neutro profissional.** Você, sua. Sem gírias.
+- Componentes Mintlify para realçar fluxo: `<Steps>`, `<Tabs>`, `<Cards>`,
+  `<Note>`, `<Tip>`, `<Warning>`, `<Accordion>`.
+- Imagens em `images/` (PNG, ideal ≤ 1 MB).
+- Para detalhes técnicos do código-fonte da aplicação, ver o repo
+  [`jbpalermoznit/ZNIT-SIMULADOR-CARBONO`](https://github.com/jbpalermoznit/ZNIT-SIMULADOR-CARBONO).
 
-```
-mint dev
-```
+## Pendências
 
-View your local preview at `http://localhost:3000`.
-
-## Publishing changes
-
-Install our GitHub app from your [dashboard](https://dashboard.mintlify.com/settings/organization/github-app) to propagate changes from your repo to your deployment. Changes are deployed to production automatically after pushing to the default branch.
-
-## Need help?
-
-### Troubleshooting
-
-- If your dev environment isn't running: Run `mint update` to ensure you have the most recent version of the CLI.
-- If a page loads as a 404: Make sure you are running in a folder with a valid `docs.json`.
-
-### Resources
-- [Mintlify documentation](https://mintlify.com/docs)
+- [ ] Screenshots reais (substituir referências textuais)
+- [ ] Página de Relatórios/Exportações quando o PDF do memorando estiver pronto
+- [ ] Vídeo demo curto (1-2 min)
+- [ ] Versão em inglês para clientes fora do Brasil
