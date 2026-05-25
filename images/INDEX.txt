@@ -1,7 +1,1 @@
 sign-in.png	/sign-in
-sign-up.png	/sign-up
-dashboard.png	/dashboard
-overview.png	/projects/369f328c-651a-469f-85ae-814aa2843572/overview
-import.png	/projects/369f328c-651a-469f-85ae-814aa2843572/import
-items.png	/projects/369f328c-651a-469f-85ae-814aa2843572/items
-scenarios.png	/projects/369f328c-651a-469f-85ae-814aa2843572/scenarios

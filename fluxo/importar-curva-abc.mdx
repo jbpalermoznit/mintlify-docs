@@ -85,11 +85,11 @@ Durante o processamento, o sistema:
 | **Parse** | Extrai os itens da planilha, normaliza unidades (m², kg, h…), classifica em Pareto P1/P2/P3 por custo acumulado |
 | **Classificação** | Identifica o tipo de cada item (A: Material, B: Mão de obra, C: Item agrupado, D: Material embutido, E: Equipamento, F: Administrativo) |
 | **Auto-exclusão** | Marca como **excluídos** itens que não geram emissão direta de Scope 3 materiais (mão-de-obra, equipamento, subcontratos) — com justificativa registrada |
-| **Auto-mapeamento** | Busca fator de emissão para cada item Tipo A em: Factor Rules → GHG Protocol → CECarbon → EPD (com GWP) → Ecoinvent |
+| **Auto-mapeamento** | Busca fator de emissão para cada item Tipo A em: Factor Rules → GHG Protocol → CECarbon → Ecoinvent |
 | **Cenário Base** | Cria automaticamente o cenário inicial calculado a partir desses fatores |
 
 <Note>
-A regra de hierarquia (EPD → GHG → Ecoinvent) reflete o padrão de inventário de carbono em construção: priorizamos fatores certificados e brasileiros sempre que disponíveis.
+EPDs **não entram no auto-map**. Elas são específicas de fornecedor/produto e são usadas como **substituição** do fator genérico — você escolhe a EPD certa via **Editar Fator de Emissão** quando o fornecedor está confirmado. Isso evita que a IA fixe uma EPD aleatória logo na importação, quando o fornecedor ainda pode mudar.
 </Note>
 
 ## Erros comuns na importação

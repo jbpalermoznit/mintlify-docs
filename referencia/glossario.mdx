@@ -16,7 +16,7 @@ Painel da Visão Geral que mostra o que o auto-mapeamento decidiu para cada item
 ## C
 
 **CECarbon**
-Base de fatores de emissão brasileiros mantida pelo Centro de Estudos em Construção e Carbono (CBCS). Cobre materiais de construção típicos: concreto, aço, cimento, argamassas, blocos cerâmicos, madeira, alumínio, vidro, etc. Tier 2 da hierarquia (depois de EPDs).
+Base de fatores de emissão brasileiros mantida pelo Centro de Estudos em Construção e Carbono (CBCS). Cobre materiais de construção típicos: concreto, aço, cimento, argamassas, blocos cerâmicos, madeira, alumínio, vidro, etc. Tier 2 da hierarquia do auto-map (depois de GHG Protocol).
 
 **Cenário Base**
 Cenário inicial criado automaticamente no momento da importação. Funciona como referência (baseline) para comparar com cenários alternativos.
@@ -30,10 +30,10 @@ Identificador único de cada item no orçamento iTwo (ex: `420301-ca50B`). O pre
 ## E
 
 **Ecoinvent**
-Base de fatores LCA (Life Cycle Assessment) processo-a-processo, de referência global. Origem europeia — usar com atenção aos limites de sistema. Tier 4 da hierarquia (fallback final).
+Base de fatores LCA (Life Cycle Assessment) processo-a-processo, de referência global. Origem europeia — usar com atenção aos limites de sistema. Tier 3 da hierarquia do auto-map (fallback final).
 
 **EPD (Environmental Product Declaration)**
-Declaração ambiental de produto certificada por terceiros, segundo a norma EN 15804. É o fator de emissão mais confiável e específico — quando disponível, prevalece sobre fatores médios setoriais. Tier 1 da hierarquia.
+Declaração ambiental de produto certificada por terceiros, segundo a norma EN 15804. É o fator de emissão mais confiável e específico — atrelado a um fornecedor/produto declarado. EPDs **não são escolhidas pelo auto-map**; entram via **substituição manual** no editor de fator quando o fornecedor real do projeto está confirmado.
 
 **Escopo (Scope)**
 Categorias do GHG Protocol para classificar emissões:
@@ -46,7 +46,7 @@ Na construção civil, Scope 3 — Materiais é tipicamente >90% do inventário.
 ## F
 
 **Factor Rules**
-Regras curadas pela sua empresa que mapeiam padrões de descrição (ex: "concreto fck 30") a fatores específicos. Tier 0 da hierarquia (prioridade máxima). Aprende e reaproveita em projetos futuros.
+Regras curadas pela sua empresa que mapeiam padrões de descrição (ex: "concreto fck 30") a fatores específicos — podem inclusive apontar para uma EPD certificada. Tier 0 da hierarquia (prioridade máxima). Aprende e reaproveita em projetos futuros.
 
 **Fator de emissão**
 Valor em kgCO₂e por unidade de material (kg, m³, m², un, etc.) que, multiplicado pela quantidade, dá a emissão total daquele item.
@@ -54,7 +54,7 @@ Valor em kgCO₂e por unidade de material (kg, m³, m², un, etc.) que, multipli
 ## G
 
 **GHG Protocol BR**
-Adaptação brasileira do Greenhouse Gas Protocol mantida pelo CEBDS. Inclui fatores setoriais para combustíveis fósseis, transporte e algumas matérias-primas. Tier 2 da hierarquia.
+Adaptação brasileira do Greenhouse Gas Protocol mantida pelo CEBDS. Inclui fatores setoriais para combustíveis fósseis, transporte e algumas matérias-primas. Tier 1 da hierarquia do auto-map.
 
 **GWP (Global Warming Potential)**
 Potencial de aquecimento global de um gás em relação ao CO₂, medido em uma janela de tempo (geralmente 100 anos). Usado para converter diferentes gases (metano, óxido nitroso, etc.) para uma unidade comum: **CO₂ equivalente**.
@@ -110,12 +110,13 @@ A maioria dos EPDs publicados é A1-A3.
 Unidade padrão para reportar emissões de gases de efeito estufa. 1 tCO₂e = 1000 kgCO₂e = quantidade de qualquer gás de efeito estufa que tem o mesmo efeito climático que 1 tonelada de CO₂ em 100 anos.
 
 **Tier**
-Nível na hierarquia de fontes de fator de emissão. Quanto menor o número, maior a prioridade:
-- Tier 0: Factor Rules (curadas pela empresa)
-- Tier 1: EPD certificada
-- Tier 2: GHG Protocol BR
-- Tier 3: CECarbon
-- Tier 4: Ecoinvent (fallback global)
+Nível na hierarquia de fontes do **auto-map**. Quanto menor o número, maior a prioridade:
+- Tier 0: Factor Rules (curadas pela empresa — podem apontar para qualquer fonte, inclusive EPD)
+- Tier 1: GHG Protocol BR
+- Tier 2: CECarbon
+- Tier 3: Ecoinvent (fallback global)
+
+EPDs ficam fora do auto-map por design — só entram quando o analista escolhe explicitamente uma como substituição no editor de fator.
 
 ## V
 
